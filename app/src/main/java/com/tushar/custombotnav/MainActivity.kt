@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.PopupMenu
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.navigation.NavHost
 import androidx.navigation.fragment.NavHostFragment
 import com.tushar.custombotnav.databinding.ActivityMainBinding
 
@@ -29,12 +28,12 @@ class MainActivity : AppCompatActivity() {
         val navController=navHost.navController
         binding.bottomNav.setOnItemSelectedListener {
             if (it.itemId==R.id.first){
-                if (navController.currentDestination?.id!=R.id.first){
+                if (navController.currentDestination?.id!=R.id.firstFragment){
                     navController.navigate(R.id.action_secondFragment_to_firstFragment)
                 }
             }
             if (it.itemId==R.id.second){
-                if (navController.currentDestination?.id!=R.id.second){
+                if (navController.currentDestination?.id!=R.id.secondFragment){
                     navController.navigate(R.id.action_firstFragment_to_secondFragment)
                 }
             }
